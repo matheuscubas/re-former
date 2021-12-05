@@ -1,4 +1,4 @@
-<form action="/users" method="post" accept-charset="utf-8">
+<!--<form action="/users" method="post" accept-charset="utf-8">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <label for="name">Name</label>
   <input type="text" name="user[name]"><br><br>
@@ -7,4 +7,16 @@
   <label for="password">Password</label>
   <input type="password" name="user[password]"><br><br>
   <input type="submit" value="Create User">
-</form>
+</form>--> 
+
+<!-- below i will recreate this form using *_tag helpers -->
+
+<%= form_tag('users', method: :post) do %><br><br>
+<%= label_tag 'name' %><br><br>
+<%= text_field_tag 'user[name]' %><br><br>
+<%= label_tag 'password' %><br><br>
+<%= password_field_tag 'user[password]' %><br><br>
+<%= label_tag 'email' %><br><br>
+<%= email_field_tag 'user[email]' %><br><br>
+<%= submit_tag %>
+<% end %>
