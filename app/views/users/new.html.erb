@@ -11,7 +11,7 @@
 
 <!-- below i will recreate this form using *_tag helpers -->
 
-<%= form_tag('users', method: :post) do %><br><br>
+<!--<%= form_tag('users', method: :post) do %><br><br>
 <%= label_tag 'name' %><br><br>
 <%= text_field_tag 'user[name]' %><br><br>
 <%= label_tag 'password' %><br><br>
@@ -19,4 +19,16 @@
 <%= label_tag 'email' %><br><br>
 <%= email_field_tag 'user[email]' %><br><br>
 <%= submit_tag %>
+<% end %> -->
+
+<!-- and now i will build a form using form_with helper-->
+
+<%= form_with model: @user do |form| %><br><br>
+  <%= form.label :name %><br>
+  <%= form.text_field :name, placeholder: 'Your name here' %><br><br>
+  <%= form.label :email %><br>
+  <%= form.text_field :email, placeholder: 'your@email.here' %><br><br>
+  <%= form.label :password %><br>
+  <%= form.password_field :password%><br><br>
+  <%= form.submit%><br><br>
 <% end %>
